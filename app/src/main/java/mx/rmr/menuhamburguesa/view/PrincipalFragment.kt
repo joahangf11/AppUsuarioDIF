@@ -40,20 +40,56 @@ class PrincipalFragment : Fragment() {
 
         // Evento de cuando el usuario da clic en el botón del mapa
         binding.btnEntrar.setOnClickListener {
-            val id = binding.etId.text.toString().toInt()
-            binding.pbInicioSesion.visibility = View.VISIBLE
-            android.os.Handler().postDelayed({
-                viewModel.inicioSesionVM(id)
-                viewModel.usuario.observe(viewLifecycleOwner){
-                    if (it != null){
-                        val accion = PrincipalFragmentDirections.actionPrincipalFragmentToNavHome(it)
-                        findNavController().navigate(accion)
-                        println("SIUU")
-                    } else{
-                        println("NO HAY USUARIO JAJA")
+
+            val entrada = binding.etId.text.toString()
+
+            val regexId = Regex("""^\d{4}$""")
+
+            val regexCURP = Regex("^[A-Z0-9]{18}$")
+
+            val regexCel = Regex("""^\d{10}$""")
+
+            //ID
+
+            if (regexId.matches(entrada)){
+                val id = entrada.toInt()
+                binding.pbInicioSesion.visibility = View.VISIBLE
+                android.os.Handler().postDelayed({
+                    viewModel.inicioSesionVM(id)
+                    viewModel.usuario.observe(viewLifecycleOwner){
+                        if (it != null){
+                            val accion = PrincipalFragmentDirections.actionPrincipalFragmentToNavHome(it)
+                            findNavController().navigate(accion)
+                            println("SIUU")
+                        } else{
+                            println("NO HAY USUARIO JAJA")
+                        }
                     }
-                }
-            },4000)
+                },4000)
+            }
+
+            //CURP
+            else if (regexCURP.matches(entrada)){
+                //Codigo de entrar con CURP
+            }
+
+            //CORREO
+            else if( entrada.contains("@")){
+                //Codigo de entrar con correo
+            }
+
+            //CELULAR
+
+            else if(regexCel.matches(entrada)){
+                //Codifo de entrar con numero de cel
+            }
+
+            else{
+                // Alerta de formato no ingresado correctamente
+            }
+
+
+
         }
         binding.imgMapa.setOnClickListener {
             findNavController().navigate(R.id.action_principalFragment_to_mapaInicioFragment)

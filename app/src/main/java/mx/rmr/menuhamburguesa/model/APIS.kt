@@ -6,6 +6,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.google.gson.Gson
+import org.json.JSONObject
 
 class APIS {
 
@@ -14,6 +16,7 @@ class APIS {
     val usuario = MutableLiveData<List<Usuario>>()
     val comedores = MutableLiveData<List<Comedores>>()
     val parientes = MutableLiveData<List<Pariente>>()
+    val idUsuarioNuevo = MutableLiveData<Int>()
 
     //El objeto retrofit
     private val retrofit by lazy {
@@ -33,7 +36,19 @@ class APIS {
         call.enqueue(object: Callback<Any> {
             override fun onResponse(call: Call<Any>, response: Response<Any>) {
                 if (response.isSuccessful){
+
                     println("RESPUESTA: ${response.body()}")
+
+                    val jsonStr = response.body()?.toString()
+
+                    // Analiza el JSON
+                    val jsonObject =  JSONObject(jsonStr.toString())
+
+                    // Obtiene el valor entero del campo "numero" del JSON
+                    val numero = jsonObject.getInt("IDUsuario")
+
+                    idUsuarioNuevo.value = numero
+
                 } else {
                     println("Error en la descarga ${response.errorBody()}")
                 }

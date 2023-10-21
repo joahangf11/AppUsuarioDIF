@@ -52,6 +52,9 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
+    //Parsear JSON
+    implementation("com.google.code.gson:gson:2.9.0")
+
     //Maps
     implementation("com.google.android.gms:play-services-maps:18.1.0")
 

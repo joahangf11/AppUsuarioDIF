@@ -84,7 +84,7 @@ class RegistrarseFragment : Fragment() {
 
         // Spinner de Nacionalidad
         val spinnerNacionalida = requireView().findViewById<Spinner>(R.id.spinnerNacionalidad)
-        val opcionesNacionalidad = arrayOf("Mexico", "Argentia", "Colombia", "Ecuador", "Chile")
+        val opcionesNacionalidad = arrayOf("México", "Argentia", "Colombia", "Ecuador", "Chile")
         val adaptadorNacionalidad = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesNacionalidad)
         spinnerNacionalida.adapter = adaptadorNacionalidad
 
@@ -129,9 +129,13 @@ class RegistrarseFragment : Fragment() {
                 binding.etCelular.text.toString(), binding.etCorreo.text.toString())
             binding.pbEnvioDatos.visibility = View.VISIBLE
             println(usuario)
+            println(binding.etFecha.text.toString())
             android.os.Handler().postDelayed({
                 viewModel.resgitrarUsuarioVM(usuario)
-                findNavController().navigate(R.id.action_registrarseFragment_to_nav_home)
+                viewModel.usuario.observe(viewLifecycleOwner){
+                    val accion = RegistrarseFragmentDirections.actionRegistrarseFragmentToNavHome(it)
+                    findNavController().navigate(accion)
+                }
             },4000)
         }
         }
