@@ -23,4 +23,13 @@ interface ListaServiciosApi
     @GET("/obtenerFamilia/{id}")
     fun obtenerFamilia(@Path("id") id: Int): Call<List<Pariente>>
 
+    @GET("/inicioSesion2/{curp}")
+    fun iniciarSesionCURP(@Path("curp") curp: String): Call<List<Usuario>>
+
+    @GET("/inicioSesion3/{celular}")
+    fun iniciarSesionCel(@Path("celular") celular: String): Call<List<Usuario>>
+
+    @GET("/inicioSesion4/{correo}")
+    fun iniciarSesionCorreo(@Path("correo") correo: String): Call<List<Usuario>>
+
 }

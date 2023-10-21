@@ -140,4 +140,66 @@ class APIS {
         })
     }
 
+
+    ////////
+
+
+    fun iniciarSesionCURP(curp: String) {
+        val call = descargarAPI.iniciarSesionCURP(curp)
+        call.enqueue(object: Callback<List<Usuario>> {
+            override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                    usuario.value = response.body()
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Usuario>>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+    }
+
+    ///////
+
+    fun iniciarSesionCel(celular: String) {
+        val call = descargarAPI.iniciarSesionCel(celular)
+        call.enqueue(object: Callback<List<Usuario>> {
+            override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                    usuario.value = response.body()
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Usuario>>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+    }
+
+    ///////
+
+    fun iniciarSesionCorreo(correo: String) {
+        val call = descargarAPI.iniciarSesionCorreo(correo)
+        call.enqueue(object: Callback<List<Usuario>> {
+            override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                    usuario.value = response.body()
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Usuario>>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+    }
+
 }

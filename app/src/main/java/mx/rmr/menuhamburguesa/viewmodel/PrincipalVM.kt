@@ -14,10 +14,35 @@ class PrincipalVM : ViewModel() {
     //Referencia al modelo
     private val registro = APIS()
 
-    fun inicioSesionVM(id: Int){
+    fun inicioSesionIDVM(id: Int){
         registro.iniciarSesionId(id)
         registro.usuario.observeForever(){lista ->
              usuario.value = lista.toTypedArray()[0]
         }
     }
+
+    fun inicioSesionCURPVM(curp: String){
+        registro.iniciarSesionCURP(curp)
+        registro.usuario.observeForever(){lista ->
+            usuario.value = lista.toTypedArray()[0]
+        }
+    }
+
+
+    fun inicioSesionCelVM(celular: String){
+        registro.iniciarSesionCel(celular)
+        registro.usuario.observeForever(){lista ->
+            usuario.value = lista.toTypedArray()[0]
+        }
+    }
+
+
+    fun inicioSesionCorreoVM(correo: String){
+        registro.iniciarSesionCorreo(correo)
+        registro.usuario.observeForever(){lista ->
+            usuario.value = lista.toTypedArray()[0]
+        }
+    }
+
+
 }

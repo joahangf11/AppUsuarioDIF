@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -55,7 +56,7 @@ class PrincipalFragment : Fragment() {
                 val id = entrada.toInt()
                 binding.pbInicioSesion.visibility = View.VISIBLE
                 android.os.Handler().postDelayed({
-                    viewModel.inicioSesionVM(id)
+                    viewModel.inicioSesionIDVM(id)
                     viewModel.usuario.observe(viewLifecycleOwner){
                         if (it != null){
                             val accion = PrincipalFragmentDirections.actionPrincipalFragmentToNavHome(it)
@@ -70,22 +71,57 @@ class PrincipalFragment : Fragment() {
 
             //CURP
             else if (regexCURP.matches(entrada)){
-                //Codigo de entrar con CURP
+                binding.pbInicioSesion.visibility = View.VISIBLE
+                android.os.Handler().postDelayed({
+                    viewModel.inicioSesionCURPVM(entrada)
+                    viewModel.usuario.observe(viewLifecycleOwner){
+                        if (it != null){
+                            val accion = PrincipalFragmentDirections.actionPrincipalFragmentToNavHome(it)
+                            findNavController().navigate(accion)
+                            println("SIUU")
+                        } else{
+                            println("NO HAY USUARIO JAJA")
+                        }
+                    }
+                },4000)
             }
 
             //CORREO
             else if( entrada.contains("@")){
-                //Codigo de entrar con correo
+                binding.pbInicioSesion.visibility = View.VISIBLE
+                android.os.Handler().postDelayed({
+                    viewModel.inicioSesionCorreoVM(entrada)
+                    viewModel.usuario.observe(viewLifecycleOwner){
+                        if (it != null){
+                            val accion = PrincipalFragmentDirections.actionPrincipalFragmentToNavHome(it)
+                            findNavController().navigate(accion)
+                            println("SIUU")
+                        } else{
+                            println("NO HAY USUARIO JAJA")
+                        }
+                    }
+                },4000)
             }
 
             //CELULAR
 
             else if(regexCel.matches(entrada)){
-                //Codifo de entrar con numero de cel
+                binding.pbInicioSesion.visibility = View.VISIBLE
+                android.os.Handler().postDelayed({
+                    viewModel.inicioSesionCelVM(entrada)
+                    viewModel.usuario.observe(viewLifecycleOwner){
+                        if (it != null){
+                            val accion = PrincipalFragmentDirections.actionPrincipalFragmentToNavHome(it)
+                            findNavController().navigate(accion)
+                            println("SIUU")
+                        } else{
+                            println("NO HAY USUARIO JAJA")
+                        }
+                    }
+                },4000)
             }
-
             else{
-                // Alerta de formato no ingresado correctamente
+                entradaIncompleta()
             }
 
 
@@ -98,6 +134,19 @@ class PrincipalFragment : Fragment() {
             findNavController().navigate(R.id.action_principalFragment_to_registrarseFragment)
 
         }
+    }
+
+    private fun entradaIncompleta() {
+        val alerta = AlertDialog.Builder(requireContext())
+            .setTitle("Aviso")
+            .setMessage("La entrada proporcionado no cuenta con ninguno de los formatos aceptados")
+           // .setCancelable(false)
+            .setPositiveButton("Aceptar") { _, _ ->
+                // Cierra este fragmento y vuelve al anterior
+                // requireActivity().supportFragmentManager.popBackStack()
+            }
+        //.create()
+        alerta.show()
     }
 
 }
