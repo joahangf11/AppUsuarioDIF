@@ -77,6 +77,7 @@
                         android:layout_weight="1">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTelefonoNuevo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Telefono Nuevo"
@@ -85,7 +86,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/btnCambiarTelefono"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -108,18 +109,19 @@
                         android:layout_weight="1">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etIdPariente"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Id Pariente" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Button
-                        android:id="@+id/btnMasInfo"
+                        android:id="@+id/btnAgregarPariente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="1"
-                        android:text="Agregar Pariete" />
+                        android:text="Agregar Pariente" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -159,13 +161,14 @@
                         android:layout_weight="1">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCorreoActualizado"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Correo Electronico" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Button
-                        android:id="@+id/btnMasInfo2"
+                        android:id="@+id/btnCambiarCorreo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"

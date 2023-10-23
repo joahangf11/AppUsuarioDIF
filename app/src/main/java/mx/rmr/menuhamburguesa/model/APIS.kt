@@ -7,6 +7,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import org.json.JSONObject
 
 class APIS {
@@ -201,5 +202,81 @@ class APIS {
             }
         })
     }
+
+    fun registrarPariente(idParienteNuevo: Int, idUsuario: Int) {
+
+        //HACER JSON
+        val jsonBody = JsonObject()
+        jsonBody.addProperty("Pariente1", idUsuario)
+        jsonBody.addProperty("Pariente2", idParienteNuevo)
+
+
+        val call = descargarAPI.agregarPariente(jsonBody)
+        call.enqueue(object: Callback<Any> {
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+    }
+
+    ///////
+
+    fun actualizarCorreo(idUsuario: Int, correoActualizado: String){
+
+        //HACER JSON
+        val jsonBody = JsonObject()
+        jsonBody.addProperty("correoActualizado", correoActualizado)
+
+        val call = descargarAPI.actualizarCorreo(idUsuario, jsonBody)
+        call.enqueue(object: Callback<Any> {
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+
+
+    }
+
+    ///////
+
+    fun actualizarNumero(idUsuario: Int, numeroActualizado: String){
+
+        //HACER JSON
+        val jsonBody = JsonObject()
+        jsonBody.addProperty("numeroActualizado", numeroActualizado)
+
+        val call = descargarAPI.actualizarNumero(idUsuario, jsonBody)
+        call.enqueue(object: Callback<Any> {
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+
+    }
+
 
 }
