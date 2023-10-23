@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import mx.rmr.menuhamburguesa.R
@@ -77,6 +78,10 @@ class InfoFragment : Fragment() {
             println(it)
             val parientes = it.toTypedArray()
             configurarRV(parientes,requireContext())
+        }
+
+        binding.btnMasInfo.setOnClickListener() {
+            findNavController().navigate(R.id.action_consultarInfo_to_cambiarFragment)
         }
 
     }

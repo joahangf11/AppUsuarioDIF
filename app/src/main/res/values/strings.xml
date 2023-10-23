@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MenuHamburguesa</string>
+    <string name="app_name">Nutri Red Usuario</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Joahan Garcia</string>
@@ -8,7 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Ver QR</string>
-    <string name="menu_info">Consultar condicion y familia</string>
+    <string name="menu_info">Consultar Informacion</string>
     <string name="menu_calificar">Calificar comedor</string>
     <string name="menu_mapas">Consultar Mapa</string>
     <string name="menu_cerrarSesion">Cerrar Sesion</string>

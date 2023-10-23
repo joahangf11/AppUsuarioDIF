@@ -39,6 +39,9 @@
         <argument
             android:name="usuario"
             app:argType="mx.rmr.menuhamburguesa.model.Usuario" />
+        <action
+            android:id="@+id/action_consultarInfo_to_cambiarFragment"
+            app:destination="@id/cambiarFragment" />
     </fragment>
 
     <fragment
@@ -75,4 +78,9 @@
         android:name="mx.rmr.menuhamburguesa.view.MenuFragment"
         android:label="@string/menu_menu"
         tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/cambiarFragment"
+        android:name="mx.rmr.menuhamburguesa.view.CambiarFragment"
+        android:label="Informacion del Usuario"
+        tools:layout="@layout/fragment_cambiar" />
 </navigation>
