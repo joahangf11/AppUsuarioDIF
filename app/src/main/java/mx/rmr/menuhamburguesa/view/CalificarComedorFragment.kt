@@ -71,7 +71,7 @@ class CalificarComedorFragment : Fragment() {
 
     private fun registrarEventos() {
         binding.btnCalificarComedor.setOnClickListener{
-            var calificacion = Calificacion(sharedViewModel.usuario.value!!.IDUsuario,1, binding.etFechaCalif.text.toString(),binding.rbLimpiezaComedor.rating.toInt(),
+            var calificacion = Calificacion(sharedViewModel.usuario.value!!.IDUsuario,binding.spinnerComedores.selectedItem.toString(), binding.etFechaCalif.text.toString(),binding.rbLimpiezaComedor.rating.toInt(),
                 binding.rbComidaComedor.rating.toInt(), binding.rbRapidezComedor.rating.toInt(), binding.etComentarioComedor.text.toString())
             viewModel.calificarComedor(calificacion)
             envioCalificacionExitoso()

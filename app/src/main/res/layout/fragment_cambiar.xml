@@ -161,14 +161,14 @@
                     android:orientation="horizontal">
 
                     <Spinner
-                        android:id="@+id/spinner"
+                        android:id="@+id/spnCondicionC"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1" />
 
                     <Button
-                        android:id="@+id/button4"
+                        android:id="@+id/btnCambiarCondicion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"

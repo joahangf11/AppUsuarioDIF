@@ -278,5 +278,49 @@ class APIS {
 
     }
 
+    ///////
+
+    fun actualizarCondicion(idUsuario: Int, condicionActualizado: String){
+
+        //HACER JSON
+        val jsonBody = JsonObject()
+        jsonBody.addProperty("condicionActualizada", condicionActualizado)
+
+        val call = descargarAPI.actualizarCondicion(idUsuario, jsonBody)
+        call.enqueue(object: Callback<Any> {
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+
+    }
+
+    fun eliminarPariente(idUsuario: Int, idParienteBorrar: Int) {
+
+        val call = descargarAPI.eliminarPariente(idUsuario, idParienteBorrar)
+        call.enqueue(object: Callback<Any> {
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                if (response.isSuccessful){
+                    println("RESPUESTA: ${response.body()}")
+                } else {
+                    println("Error en la descarga ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                println("ERROR: ${t.localizedMessage}")
+            }
+        })
+
+    }
+
 
 }

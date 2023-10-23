@@ -2,7 +2,7 @@ package mx.rmr.menuhamburguesa.model
 
 data class Calificacion(
     val IDUsuario: Int,
-    val FolioComedor: Int,
+    val NombreComedor: String,
     val Fecha: String,
     val CalLimpieza: Int,
     val CalComida: Int,

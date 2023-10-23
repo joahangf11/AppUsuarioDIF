@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -43,4 +44,10 @@ interface ListaServiciosApi
 
     @PUT("/actualizarNumeroTelefonico/{id}")
     fun actualizarNumero(@Path("id") idUsuario: Int, @Body numeroActualizado: JsonObject): Call<Any>
+
+    @PUT("/actualizarCondicion/{id}")
+    fun actualizarCondicion(@Path("id") idUsuario: Int, @Body condicionActualizada: JsonObject): Call<Any>
+
+    @DELETE("/eliminarPariente/{Pariente1}/{Pariente2}")
+    fun eliminarPariente(@Path("Pariente1") idPariente1: Int, @Path("Pariente2") idPariente2: Int): Call<Any>
 }

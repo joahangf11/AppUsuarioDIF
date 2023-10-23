@@ -76,7 +76,7 @@ class CambiarFragment : Fragment() {
 
         //Agregar pariente
         binding.btnAgregarPariente.setOnClickListener{
-            val idParienteNuevo = binding.etIdPariente.text.toString().toInt()
+            val idParienteNuevo = binding.etIdParienteAgregar.text.toString().toInt()
             viewModel.agregarPariente(idParienteNuevo, sharedViewModel.usuario.value!!.IDUsuario)
             envioExitoso()
         }
@@ -98,6 +98,25 @@ class CambiarFragment : Fragment() {
             viewModel.actualizarNumero(sharedViewModel.usuario.value!!.IDUsuario, numeroActualizado)
             envioExitoso()
         }
+
+
+        //Cambiar condicion
+        binding.btnCambiarCondicion.setOnClickListener {
+            val condicion = binding.spnCondicionC.selectedItem.toString()
+            viewModel.actualizarCondicion(sharedViewModel.usuario.value!!.IDUsuario,condicion)
+            envioExitoso()
+        }
+
+        //Eliminar Pariente
+        binding.btnEliminarPariente.setOnClickListener {
+            val idParienteBorrar = binding.etIdParienteEliminar.text.toString().toInt()
+            viewModel.eliminarPariente(sharedViewModel.usuario.value!!.IDUsuario, idParienteBorrar)
+            envioExitoso()
+        }
+
+
+
+
     }
 
     private fun envioExitoso() {
