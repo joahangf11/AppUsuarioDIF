@@ -54,7 +54,7 @@ class CambiarFragment : Fragment() {
 
     private fun registrarSpinners() {
         // Spinner de Condicion
-        val spinnerCondicion = requireView().findViewById<Spinner>(R.id.spinnerCondicion)
+        val spinnerCondicion = requireView().findViewById<Spinner>(R.id.spnCondicionC)
         val opcionesCondicion = arrayOf(
             "Persona mayor de 60 años",
             "Menor de edad",
@@ -69,7 +69,7 @@ class CambiarFragment : Fragment() {
             "No aplica"
         )
         val adaptadorCondicion = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesCondicion)
-//        spinnerCondicion.adapter = adaptadorCondicion
+        spinnerCondicion.adapter = adaptadorCondicion
     }
 
     private fun registrarEventos() {
