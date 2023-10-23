@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="mx.rmr.menuhamburguesa.ui.home.HomeFragment"
+        android:name="mx.rmr.menuhamburguesa.view.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <argument
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/consultarInfo"
-        android:name="mx.rmr.menuhamburguesa.ui.info.InfoFragment"
+        android:name="mx.rmr.menuhamburguesa.view.InfoFragment"
         android:label="@string/menu_info"
         tools:layout="@layout/fragment_info" >
         <argument
@@ -46,7 +46,7 @@
 
     <fragment
         android:id="@+id/calificarComedor"
-        android:name="mx.rmr.menuhamburguesa.ui.calificarcomedor.CalificarComedorFragment"
+        android:name="mx.rmr.menuhamburguesa.view.CalificarComedorFragment"
         android:label="@string/menu_calificar"
         tools:layout="@layout/fragment_calfica_comedores" >
         <argument

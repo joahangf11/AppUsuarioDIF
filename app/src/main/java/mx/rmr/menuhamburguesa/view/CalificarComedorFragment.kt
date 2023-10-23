@@ -1,4 +1,4 @@
-package mx.rmr.menuhamburguesa.ui.calificarcomedor
+package mx.rmr.menuhamburguesa.view
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -6,15 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import mx.rmr.menuhamburguesa.R
 import mx.rmr.menuhamburguesa.databinding.FragmentCalficaComedoresBinding
 import mx.rmr.menuhamburguesa.model.Calificacion
+import mx.rmr.menuhamburguesa.viewmodel.CalificarComedorVM
 import mx.rmr.menuhamburguesa.viewmodel.SharedViewModel
 import java.util.Calendar
 

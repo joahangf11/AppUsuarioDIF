@@ -19,7 +19,6 @@ import androidx.navigation.ui.NavigationUI
 import mx.rmr.menuhamburguesa.R
 import mx.rmr.menuhamburguesa.databinding.ActivityMainBinding
 import mx.rmr.menuhamburguesa.model.Usuario
-import mx.rmr.menuhamburguesa.ui.home.HomeFragment
 import mx.rmr.menuhamburguesa.viewmodel.SharedViewModel
 
 class MainActivity : AppCompatActivity(), HomeFragment.DataChangeListener {

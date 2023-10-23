@@ -71,20 +71,50 @@ class RegistrarseFragment : Fragment() {
     private fun registrarSpinners() {
         // Spinner de Sexo
         val spinnerSexo = requireView().findViewById<Spinner>(R.id.spinnerSexo)
-        val opcionesSexo = arrayOf("Masculino", "Femenino", "Otros")
+        val opcionesSexo = arrayOf(
+            "Masculino",
+            "Femenino",
+            "Otro"
+        )
         val adaptadorSexo = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesSexo)
         spinnerSexo.adapter = adaptadorSexo
 
         // Spinner de Condicion
         val spinnerCondicion = requireView().findViewById<Spinner>(R.id.spinnerCondicion)
-        val opcionesCondicion = arrayOf("Ninguna Condicion", "Embarazo", "Mayor de 60", "Indigena",
-            "Discapacidad", "LGBTQ+", "Trabajador informal", "No aplica")
+        val opcionesCondicion = arrayOf(
+            "Persona mayor de 60 años",
+            "Menor de edad",
+            "Persona indígena",
+            "Persona con discapacidad",
+            "Persona perteneciente al colectivo LGBTQ+",
+            "Migrante o desplazado por conflictos",
+            "Persona en condición de calle",
+            "Mujer embarazada",
+            "Trabajador/a informal",
+            "Otra condición",
+            "No aplica"
+        )
         val adaptadorCondicion = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesCondicion)
         spinnerCondicion.adapter = adaptadorCondicion
 
         // Spinner de Nacionalidad
         val spinnerNacionalida = requireView().findViewById<Spinner>(R.id.spinnerNacionalidad)
-        val opcionesNacionalidad = arrayOf("México", "Argentia", "Colombia", "Ecuador", "Chile")
+        val opcionesNacionalidad = arrayOf(
+            "México",
+            "Guatemala",
+            "El Salvador",
+            "Chile",
+            "Brasil",
+            "Perú",
+            "Honduras",
+            "Bolivia",
+            "Venezuela",
+            "Ecuador",
+            "Cuba",
+            "Belice",
+            "Uruguay",
+            "Argentina",
+        )
         val adaptadorNacionalidad = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesNacionalidad)
         spinnerNacionalida.adapter = adaptadorNacionalidad
 

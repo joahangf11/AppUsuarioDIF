@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -13,8 +15,8 @@ import mx.rmr.menuhamburguesa.R
 import mx.rmr.menuhamburguesa.databinding.FragmentCambiarBinding
 import mx.rmr.menuhamburguesa.databinding.FragmentHomeBinding
 import mx.rmr.menuhamburguesa.databinding.FragmentRegistrarseBinding
-import mx.rmr.menuhamburguesa.ui.home.HomeViewModel
 import mx.rmr.menuhamburguesa.viewmodel.CambiarVM
+import mx.rmr.menuhamburguesa.viewmodel.HomeViewModel
 import mx.rmr.menuhamburguesa.viewmodel.SharedViewModel
 
 class CambiarFragment : Fragment() {
@@ -44,6 +46,32 @@ class CambiarFragment : Fragment() {
         registrarEventos()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registrarSpinners()
+
+    }
+
+    private fun registrarSpinners() {
+        // Spinner de Condicion
+        val spinnerCondicion = requireView().findViewById<Spinner>(R.id.spinnerCondicion)
+        val opcionesCondicion = arrayOf(
+            "Persona mayor de 60 años",
+            "Menor de edad",
+            "Persona indígena",
+            "Persona con discapacidad",
+            "Persona perteneciente al colectivo LGBTQ+",
+            "Migrante o desplazado por conflictos",
+            "Persona en condición de calle",
+            "Mujer embarazada",
+            "Trabajador/a informal",
+            "Otra condición",
+            "No aplica"
+        )
+        val adaptadorCondicion = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesCondicion)
+        spinnerCondicion.adapter = adaptadorCondicion
+    }
+
     private fun registrarEventos() {
 
         //Agregar pariente
@@ -70,10 +98,6 @@ class CambiarFragment : Fragment() {
             viewModel.actualizarNumero(sharedViewModel.usuario.value!!.IDUsuario, numeroActualizado)
             envioExitoso()
         }
-
-
-
-
     }
 
     private fun envioExitoso() {

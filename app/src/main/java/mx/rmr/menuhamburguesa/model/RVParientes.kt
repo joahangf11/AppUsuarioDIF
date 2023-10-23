@@ -1,4 +1,4 @@
-package mx.rmr.menuhamburguesa.ui.info
+package mx.rmr.menuhamburguesa.model
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,13 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import mx.rmr.menuhamburguesa.R
-import mx.rmr.menuhamburguesa.model.Pariente
 import android.view.View
 import mx.rmr.menuhamburguesa.databinding.RecyclerviewInfoBinding
 
 
 class RVParientes(private val contexto: Context, var arrParientes: Array<Pariente>)
-    : RecyclerView.Adapter< RVParientes.RenglonPariente > ()
+    : RecyclerView.Adapter<RVParientes.RenglonPariente> ()
 {
 
 

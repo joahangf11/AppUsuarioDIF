@@ -1,19 +1,17 @@
-package mx.rmr.menuhamburguesa.ui.home
+package mx.rmr.menuhamburguesa.view
 
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import mx.rmr.menuhamburguesa.databinding.FragmentHomeBinding
 import mx.rmr.menuhamburguesa.model.Usuario
-import mx.rmr.menuhamburguesa.viewmodel.PrincipalVM
+import mx.rmr.menuhamburguesa.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 

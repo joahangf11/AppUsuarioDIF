@@ -1,25 +1,21 @@
-package mx.rmr.menuhamburguesa.ui.info
+package mx.rmr.menuhamburguesa.view
 
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.navigation.NavigationView
 import mx.rmr.menuhamburguesa.R
 import mx.rmr.menuhamburguesa.databinding.FragmentInfoBinding
 import mx.rmr.menuhamburguesa.model.Pariente
-import mx.rmr.menuhamburguesa.model.Usuario
-import mx.rmr.menuhamburguesa.ui.calificarcomedor.CalificarComedorVM
-import mx.rmr.menuhamburguesa.ui.home.HomeFragment
+import mx.rmr.menuhamburguesa.viewmodel.InfoVM
+import mx.rmr.menuhamburguesa.model.RVParientes
 import mx.rmr.menuhamburguesa.viewmodel.SharedViewModel
 
 class InfoFragment : Fragment() {

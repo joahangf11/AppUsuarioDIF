@@ -1,4 +1,4 @@
-package mx.rmr.menuhamburguesa.ui.info
+package mx.rmr.menuhamburguesa.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

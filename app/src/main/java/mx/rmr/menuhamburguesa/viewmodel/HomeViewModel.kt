@@ -1,4 +1,4 @@
-package mx.rmr.menuhamburguesa.ui.home
+package mx.rmr.menuhamburguesa.viewmodel
 
 import android.graphics.Bitmap
 import android.graphics.Color
