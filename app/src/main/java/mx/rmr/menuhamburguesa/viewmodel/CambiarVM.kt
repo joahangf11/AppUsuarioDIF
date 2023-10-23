@@ -8,8 +8,6 @@ class CambiarVM : ViewModel() {
     //Referencia al modelo
     private val actualizar = APIS()
 
-    constructor()
-
     fun agregarPariente(idParienteNuevo: Int, idUsuario: Int) {
         actualizar.registrarPariente(idParienteNuevo, idUsuario)
     }

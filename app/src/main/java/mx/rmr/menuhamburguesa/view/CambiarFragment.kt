@@ -69,7 +69,7 @@ class CambiarFragment : Fragment() {
             "No aplica"
         )
         val adaptadorCondicion = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesCondicion)
-        spinnerCondicion.adapter = adaptadorCondicion
+//        spinnerCondicion.adapter = adaptadorCondicion
     }
 
     private fun registrarEventos() {
